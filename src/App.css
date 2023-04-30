@@ -16,6 +16,7 @@
 
 .menu-list li {
     padding: 10px;
+    cursor: pointer;
 }
 
 .menu-area {
