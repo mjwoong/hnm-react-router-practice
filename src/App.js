@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router";
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductAll from "./page/ProductAll";
 import Login from "./page/Login";
 import ProductDetail from "./page/ProductDetail";
