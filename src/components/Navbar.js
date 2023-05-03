@@ -1,9 +1,15 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const goLoginPage = () => {
+    navigate("/login");
+  };
+
   const menuList = [
     "여성",
     "Divided",
@@ -16,8 +22,8 @@ const Navbar = () => {
   ];
   return (
     <div>
-      <div>
-        <div className="login-button">
+      <div className='login-button-area'>
+        <div className="login-button" onClick={goLoginPage}>
           <FontAwesomeIcon icon={faUser} />
           <div>로그인</div>
         </div>
@@ -29,15 +35,15 @@ const Navbar = () => {
           alt="h&m logo"
         />
       </div>
-      <div className='menu-area'>
-        <ul className='menu-list'>
+      <div className="menu-area">
+        <ul className="menu-list">
           {menuList.map((menu) => (
             <li>{menu}</li>
           ))}
         </ul>
-        <div className='search-box'>
-            <FontAwesomeIcon icon={faSearch}/>
-            <input type='text' placeholder='제품검색'/>
+        <div className="search-box">
+          <FontAwesomeIcon icon={faSearch} />
+          <input type="text" placeholder="제품검색" />
         </div>
       </div>
     </div>
