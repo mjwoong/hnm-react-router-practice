@@ -1,10 +1,11 @@
 import { Routes, Route } from "react-router";
 import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import ProductAll from "./page/ProductAll";
 import Login from "./page/Login";
 import ProductDetail from "./page/ProductDetail";
-import Navbar from './components/Navbar';
+import Navbar from "./components/Navbar";
+import { useEffect, useState } from "react";
 
 // 1. 전체 상품 페이지, 로그인 페이지, 상품 상세 페이지
 // 2. 전체 상품 페이지에서는 전체 상품 페이지를 볼 수 있다.
@@ -17,12 +18,14 @@ import Navbar from './components/Navbar';
 // 7. 상품을 검색할 수 있다.
 
 function App() {
+  const [authenticate, setAuthenticate] = useState(false); // true이면 로그인이 된 상태
+  useEffect(()=> {console.log(authenticate);},[authenticate])
   return (
     <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<ProductAll />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setAuthenticate={setAuthenticate}/>} />
         <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
     </div>

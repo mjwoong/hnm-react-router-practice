@@ -30,6 +30,7 @@ const Navbar = () => {
       </div>
       <div className="nav-section">
         <img
+        className='nav-logo'
           width={80}
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/2560px-H%26M-Logo.svg.png"
           alt="h&m logo"
