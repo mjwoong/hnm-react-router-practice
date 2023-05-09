@@ -17,6 +17,7 @@
 
 .nav-logo {
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 .menu-list {
@@ -50,13 +51,55 @@
 }
 
 .productCard {
+  margin-bottom: 20px;
+}
+
+.card-img {
   cursor: pointer;
   border:none !important;
   margin-bottom: 10px;
   width: 250px;
 }
 
+.card-conscious {
+  font-size: 12px;
+  color: rgb(13, 83, 13);
+}
+
+.card-new {
+  font-size: 12px;
+}
+
 .productCard:hover {
     transform: scale(1.1);
     z-index: 1;
+}
+
+.product-img {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.product-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.conscious {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.dropDown {
+  margin-top: 20px;
+}
+
+.add-button {
+  margin-top: 20px;
+  width: 100%;
 }

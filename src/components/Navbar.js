@@ -4,12 +4,14 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ authenticate, setAuthenticate }) => {
   const navigate = useNavigate();
   const goLoginPage = () => {
     navigate("/login");
   };
-
+  const goHome = () => {
+    navigate("/");
+  };
   const menuList = [
     "여성",
     "Divided",
@@ -22,18 +24,29 @@ const Navbar = () => {
   ];
   return (
     <div>
-      <div className='login-button-area'>
-        <div className="login-button" onClick={goLoginPage}>
-          <FontAwesomeIcon icon={faUser} />
-          <div>로그인</div>
-        </div>
+      <div className="login-button-area">
+        {authenticate ? (
+          <div className='login-button'
+            onClick={() => {
+              setAuthenticate(false);
+            }}
+          >
+            <FontAwesomeIcon icon={faUser} /> 로그아웃
+          </div>
+        ) : (
+          <div className="login-button" onClick={goLoginPage}>
+            <FontAwesomeIcon icon={faUser} />
+            <div>로그인</div>
+          </div>
+        )}
       </div>
       <div className="nav-section">
         <img
-        className='nav-logo'
+          className="nav-logo"
           width={80}
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/2560px-H%26M-Logo.svg.png"
           alt="h&m logo"
+          onClick={goHome}
         />
       </div>
       <div className="menu-area">

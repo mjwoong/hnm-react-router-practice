@@ -7,12 +7,12 @@ const ProductCard = ({ item }) => {
     navigate(`/product/${item.id}`)
   }
   return (
-    <div onClick={showDetail}>
-      <img src={item?.img} className='productCard'/>
-      <div>{item?.choice === true ? "Conscious choice" : ""}</div>
+    <div onClick={showDetail} className='productCard'>
+      <img src={item?.img} className='card-img'/>
+      <div className='card-conscious'>{item?.choice === true ? "Conscious choice" : ""}</div>
       <div>{item?.title}</div>
-      <div>{item?.price}</div>
-      <div>{item?.new === true ? "신제품" : ""}</div>
+      <div>₩ {item?.price}</div>
+      <div className='card-new'>{item?.new === true ? "신제품" : ""}</div>
     </div>
   );
 };
